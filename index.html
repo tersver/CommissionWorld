@@ -19,9 +19,25 @@
                 <img src="images/logo.jpg" alt="" class="logo">
             </div>
             <div class="header__column">
-                <i class="fas fa-bars"></i>
-            </div>
+				<a class="menu_icon" href="#">
+	                <i class="fas fa-bars"></i>
+	            </a>
+			</div>
         </header>
+        <div class="menu_list wrapper3">
+        	<div class="info">
+        		<i class="fas fa-user"></i>
+        		<span>민성 님</span>
+        	</div>
+			<ul>
+				<li><a href="#Overview"><p>그림 외주</p></a></li>
+				<li><a href="#System"><p>그림 커미션</p></a></li>
+				<li><a href="#Tech"><p>글 외주</p></a></li>
+				<li><a href="#Product"><p>글 커미션</p></a></li>
+				<li><a href="#Software"><p>자주 묻는 질문</p></a></li>
+				<li><a href="#Service"><p>문의</p></a></li>
+			</ul>
+		</div>
         <div class="contents">
             <section>
                 <img class="logo" src="images/commissionworldmain.jpg" />
@@ -31,14 +47,14 @@
                     <i class="fas fa-star" style="color:gold"></i>
                 </h2>
                 <div class="sub_kv">
-                        <img src="images/raye.jpg" />
-                        <img src="images/dlddld.jpg" />
-                        <img src="images/alaal.jpg" />
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10617007_939025979457209_6938406_n.jpg" />
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/1168617_1435408473368301_409182770_n.jpg" />
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/11189836_754178218029431_2102772742_n.jpg" />
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10843869_1658219887738208_2033326788_n.jpg" />
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/1515054_1379051609022475_1394148610_n.jpg" />
+                        <img src="images/raye.jpg" width=0 height=0 />
+                        <img src="images/dlddld.jpg" width=0 height=0 />
+                        <img src="images/alaal.jpg" width=0 height=0 />
+                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10617007_939025979457209_6938406_n.jpg" width=0 height=0/>
+                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/1168617_1435408473368301_409182770_n.jpg" width=0 height=0/>
+                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/11189836_754178218029431_2102772742_n.jpg" width=0 height=0/>
+                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10843869_1658219887738208_2033326788_n.jpg" width=0 height=0/>
+                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/1515054_1379051609022475_1394148610_n.jpg" width=0 height=0/>
                 </div>
             </section>
             <section class="after">
@@ -75,8 +91,23 @@
             <p>커미션월드 대표자:송민성</p>
         </footer>
     </div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/slick.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">
+		var h2s = document.getElementsByClassName('menu_icon');
+		var query = "h2s[0].addEventListener('click', function(){changevisible();}, false)";
+		eval(query);
+		function changevisible(){
+			var wrappers=document.getElementsByClassName('menu_list');
+			if (wrappers[0].className=="menu_list wrapper2"){
+				wrappers[0].className="menu_list wrapper3";
+			}
+			// 여기 target wrapper3이 원래 1이었음
+			else if(wrappers[0].className=="menu_list wrapper3"){
+				wrappers[0].className="menu_list wrapper2";
+			}
+		}
+	</script>    
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/slick.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

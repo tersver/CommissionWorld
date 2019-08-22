@@ -50,7 +50,51 @@ header .logo{
 
 
 
+.menu_icon{
 
+}
+
+.menu_list{
+	position:absolute;
+	right:0px;
+	opacity:0.8;
+	background-color:#1245AB;
+	padding:30px;
+	height:920px;
+	z-index:100;
+}
+.info{
+	margin-bottom:10px;
+}
+.menu_list > ul > li{
+	margin-bottom:10px;
+}
+.menu_list > ul > li > a > p{
+	text-underline-position:under;
+}
+.menu_list > ul > li>a:hover{
+    color:white;
+}
+
+.menu_list > ul > li>a:active{
+    color:white;
+}
+.menu_list > ul > li>a:link{
+    color:white;
+}
+.menu_list > ul > li>a:visited{
+    color:white;
+}
+.wrapper2{
+	display:inline-block;
+	transition: display 0.5s 1s;
+}
+
+.wrapper3{
+	display:none;
+	overflow:auto;
+	transition: display 0.5s 1s;
+}
 
 
 .after__contents{border:2px solid grey; border-radius:8px;}
