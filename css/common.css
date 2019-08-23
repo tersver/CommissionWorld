@@ -53,7 +53,18 @@ header .logo{
 .menu_icon{
 
 }
-
+.header__column a:hover{
+    color:black;
+}
+.header__column a:active{
+    color:black;
+}
+.header__column a:link{
+    color:black;
+}
+.header__column a:visited{
+    color:black;
+}
 .menu_list{
 	position:absolute;
 	right:0px;
@@ -75,7 +86,6 @@ header .logo{
 .menu_list > ul > li>a:hover{
     color:white;
 }
-
 .menu_list > ul > li>a:active{
     color:white;
 }
