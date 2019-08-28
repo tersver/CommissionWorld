@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Commission world</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
     <div class="wrap">
-        <header class="header">
+        <header class="header" style="display:flex;">
             <div class="header__column">
                 <i class="fas fa-user"></i>         
             </div>
@@ -39,50 +39,72 @@
 			</ul>
 		</div>
         <div class="contents">
-            <section>
-                <img class="logo" src="images/commissionworldmain.jpg" />
-            </section>
-            <section class="director">
-                <h2 class="director__title title">인기작가
-                    <i class="fas fa-star" style="color:gold"></i>
-                </h2>
-                <div class="sub_kv">
-                        <img src="images/raye.jpg" width=0 height=0 />
-                        <img src="images/dlddld.jpg" width=0 height=0 />
-                        <img src="images/alaal.jpg" width=0 height=0 />
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10617007_939025979457209_6938406_n.jpg" width=0 height=0/>
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/1168617_1435408473368301_409182770_n.jpg" width=0 height=0/>
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/11189836_754178218029431_2102772742_n.jpg" width=0 height=0/>
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10843869_1658219887738208_2033326788_n.jpg" width=0 height=0/>
-                        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/1515054_1379051609022475_1394148610_n.jpg" width=0 height=0/>
+            <section class="orderinfo">
+                <div class="dirname">
+					<div>
+						<p>raye작가</p>
+					</div>
                 </div>
-            </section>
-            <section class="after">
-                <h2 class="after__title title">후기</h2>
-                <div class="after__contents">
-                	<div>
-	                    <h3 class="after__name">어항/라예작가님</h3>
-	                    <p class="after__desc">
-	                            작업속도도 빠르고 좋았어요!
-	                    </p>
-	                </div>
-	                <div>
-	                    <h3 class="after__name">아항/밍밍작가님</h3>
-	                    <p class="after__desc_last">
-	                            캐릭터가 귀여워요~
-	                    </p>
-	                </div>
-                </div>
-            </section>
-            <section class="notation">
-                <h2 class="notation__title">공지</h2>        
-                <ul>
-                    <li>기능추가 업데이트1</li>
-                    <li>기능추가 업데이트2</li>
-                    <li>기능추가 업데이트3</li>
-                    <li>기능추가 업데이트4</li>
-                </ul>
-            </section>
+
+            <form class="requestform">
+            	
+            	<div>
+            		<div>
+            			<div class="inlineblock">
+            				<div class="imgdiv">
+		                		<img src="images/raye.jpg"/>
+		                	</div>
+            			</div>
+            			<div class="inlineblock">
+	            			<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="head" checked>
+							    	<p>두상:5,000원</p>
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+							    	<input type="radio" name="optionsRadios" id="optionsRadios2" value="chest">
+							    	<p>흉상:7,000원</p>
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+							    	<input type="radio" name="optionsRadios" id="optionsRadios3" value="half">
+							    	<p>반신:15,000원</p>
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+							    	<input type="radio" name="optionsRadios" id="optionsRadios4" value="whole">
+							    	<p>전신:30,000원</p>
+								</label>
+							</div>
+							<div class="topline">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value="bg">
+										<p>배경:+10,000원</p>
+									</label>
+								</div>
+							</div>
+						</div>
+            		</div>
+				 	<div class="form-group">
+						<label for="exampleInputEmail1">이메일 주소</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="이메일을 입력하세요">
+					</div>
+					<div>
+						<p class="request">요청사항</p>
+						<textarea class="form-control" rows="3"></textarea>
+					</div>
+					<div class="topline">
+				 		<button type="submit" class="btn btn-default">요청하기</button>
+				 	</div>
+				 </div>
+			</form>
+			
+			
         </div>
         <footer class="footer">
             <p>회사 email:<a href="mailto:comi1128@naver.com"><span>comi1128@naver.com</span></a></p>
@@ -93,13 +115,8 @@
         <section>
             <img class="advertisement" src="images/banner.jpg" />
         </section>
-        <!--
-        <center>
-        	<embed height="200" width="90%" src="http://www.gagalive.kr/livechat1.swf?chatroom=~~~new_CommissionWorld"></embed>
-        </center>
-        -->
     </div>
-	<script type="text/javascript">
+    <script type="text/javascript">
 		var h2s = document.getElementsByClassName('menu_icon');
 		var query = "h2s[0].addEventListener('click', function(){changevisible();}, false)";
 		eval(query);
@@ -113,7 +130,7 @@
 				wrappers[0].className="menu_list wrapper2";
 			}
 		}
-	</script>    
+	</script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/slick.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>

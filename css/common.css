@@ -39,7 +39,9 @@ header .logo{
 
 .footer p{padding:3px 0;}
 
-
+.advertisement{
+	width:100%;
+}
 /*index.html*/
 
 
@@ -177,7 +179,7 @@ header .logo{
 }
 
 
-/*orderlist.html
+/*orderform.html
 
 .orderinfo{
 	text-align:center;
@@ -233,6 +235,17 @@ header .logo{
 	border-top:1px solid;
 	padding-top:10px;
 }
+
+
+/*orderlist.html*/
+
+.order{margin-top:10px;border-bottom:2px solid grey;padding-bottom:10px;}
+.order__title{border-bottom:2px solid grey;padding:10px 0;}
+.order ul{padding:10px 0 0;}
+.order ul li{margin:10px 0;background:#4374D9;padding:10px;color:#fff;font-weight:700;border-radius:15px;}
+
+
+
 /*director.html
 
 .directorinfo{
