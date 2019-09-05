@@ -1,5 +1,7 @@
 @import "reset.css";
-
+i{
+	margin:10px;
+}
 /*common*/
 h2{font-weight:bold;}
 body{
@@ -13,7 +15,7 @@ body{
 header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;6
     padding: 10px;
     border-bottom: 2px solid grey;
 }
@@ -52,10 +54,6 @@ header .logo{
 .director .director__title{}
 
 
-
-.menu_icon{
-
-}
 .header__column a:hover{
     color:black;
 }
@@ -82,6 +80,7 @@ header .logo{
 }
 .menu_list > ul > li{
 	margin-bottom:10px;
+	text-align:center;
 }
 .menu_list > ul > li > a > p{
 	text-underline-position:under;

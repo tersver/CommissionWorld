@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Commission world</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/common.css">
-
+    
 </head>
 <body>
     <div class="wrap">
         <header class="header">
             <div class="header__column">
-                <i class="fas fa-user" onclick="document.getElementById('id01').style.display='block'"></i>         
+                <i class="fas fa-user" onclick="location.href='login.html'"></i>         
             </div>
             <div class="header__column">
                 <a href="index.html"><img src="images/logo.jpg" alt="" class="logo"></a>
@@ -39,55 +40,25 @@
 				<li><a href="#Service"><p>문의</p></a></li>
 			</ul>
 		</div>
-        <div class="contents">
-            <section class="directorinfo">
-                <div>
-                	<div>
-                		<img src="images/raye.jpg"/>
-                	</div>
-					<div class="dirinfo">
-						<p>평균 작업시간:1일</p>
-						<p>raye작가 <span><button type="button" class="btn btn-warning">요청하기</button></span></p>
-					</div>
-                </div>
-            </section>
-            <section class="sample_list">        
-                <ul class="director_list_table">
-                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
-                </ul>
-                <ul class="director_list_table">
-                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
-                </ul><ul class="director_list_table">
-                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
-                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
-                </ul>
-            </section>
-            <section class="after">
-                <h2 class="after__title title">후기</h2>
-                <div class="after__contents">
-                	<div>
-	                    <h3 class="after__name">어항/라예작가님</h3>
-	                    <p class="after__desc">
-	                            작업속도도 빠르고 좋았어요!
-	                    </p>
-	                </div>
-	                <div>
-	                    <h3 class="after__name">아항/밍밍작가님</h3>
-	                    <p class="after__desc_last">
-	                            캐릭터가 귀여워요~
-	                    </p>
-	                </div>
-                </div>
-            </section>
-        </div>
+		<div id="id01">
+			<form action="/login.php">
+			  	<div class="imgcontainer">
+			    	<img src="images/raye.jpg" alt="Avatar" class="avatar">
+				</div>
+
+			  	<div class="container"s>
+			    	<label for="uname"><b>ID</b></label>
+			    	<input type="text" placeholder="ID를 입력하세요!" name="uname" required>
+
+			    	<label for="psw"><b>비밀번호</b></label>
+			    	<input type="password" placeholder="비밀번호를 입력하세요!" name="psw" required>
+			        
+				<button type="submit">로그인</button>
+			</form>
+		</div>
+	    </div>
+	  </form>
+	</div>
         <footer class="footer">
             <p>회사 email:<a href="mailto:comi1128@naver.com"><span>comi1128@naver.com</span></a></p>
             <p>문의 | 결제내역 | 자주묻는질문 | 이용약관</p>
@@ -97,8 +68,39 @@
         <section>
             <img class="advertisement" src="images/banner.jpg" />
         </section>
+        <!--
+        <center>
+        	<embed height="200" width="90%" src="http://www.gagalive.kr/livechat1.swf?chatroom=~~~new_CommissionWorld"></embed>
+        </center>
+        -->
     </div>
-    <script type="text/javascript">
+    <div id="id01" class="modal">
+	  <form class="modal-content animate" action="/login.php">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	      <img src="images/raye.jpg" alt="Avatar" class="avatar">
+	    </div>
+
+	    <div class="container">
+	      <label for="uname"><b>Username</b></label>
+	      <input type="text" placeholder="Enter Username" name="uname" required>
+
+	      <label for="psw"><b>Password</b></label>
+	      <input type="password" placeholder="Enter Password" name="psw" required>
+	        
+	      <button type="submit">Login</button>
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Remember me
+	      </label>
+	    </div>
+
+	    <div class="container" style="background-color:#f1f1f1">
+	      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+	      <span class="psw">Forgot <a href="#">password?</a></span>
+	    </div>
+	  </form>
+	</div>
+	<script type="text/javascript">
 		var h2s = document.getElementsByClassName('menu_icon');
 		var query = "h2s[0].addEventListener('click', function(){changevisible();}, false)";
 		eval(query);
@@ -112,7 +114,7 @@
 				wrappers[0].className="menu_list wrapper2";
 			}
 		}
-	</script>
+	</script>    
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/slick.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
