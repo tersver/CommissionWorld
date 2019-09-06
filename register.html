@@ -41,29 +41,29 @@
 				<li><a href="#Service"><p>문의</p></a></li>
 			</ul>
 		</div>
-        <form action="/action_page.php">
+        <form method="post" action="registercheck.php">
 		  <div class="container">
 		    <h1>회원가입</h1>
 		    <h2>아래 정보를 입력해주세요.</h2>
 		    <hr>
 
-		    <label for="email"><b>ID</b></label>
-		    <input type="text" placeholder="ID를 입력하세요!" name="email" required>
+		    <label for="user_id"><b>ID</b></label>
+		    <input type="text" placeholder="ID를 입력하세요!" name="user_id" required>
 
-		    <label for="psw"><b>비밀번호</b></label>
-		    <input type="password" placeholder="비밀번호를 입력하세요!" name="psw" required>
+		    <label for="user_pw"><b>비밀번호</b></label>
+		    <input type="password" placeholder="비밀번호를 입력하세요!" name="user_pw" required>
 
-		    <label for="psw-repeat"><b>비밀번호 확인</b></label>
-		    <input type="password" placeholder="비밀번호를 다시 입력하세요!" name="psw-repeat" required>
+		    <label for="user_pw-repeat"><b>비밀번호 확인</b></label>
+		    <input type="password" placeholder="비밀번호를 다시 입력하세요!" name="user_pw-repeat" required>
 		    
-		    <label for="name"><b>이름</b></label>
-		    <input type="text" placeholder="이름을 입력하세요!" name="name" required>
+		    <label for="user_name"><b>이름</b></label>
+		    <input type="text" placeholder="이름을 입력하세요!" name="user_name" required>
 		    
-		    <label for="birthday"><b>생년월일</b></label>
-		    <input type="text" placeholder="예)2000/08/08" name="birthday" required>
+		    <label for="user_birth"><b>생년월일</b></label>
+		    <input type="text" placeholder="예)2000/08/08" name="user_birth" required>
 		    
-		    <label for="tel"><b>전화번호</b></label>
-		    <input type="text" placeholder="예)010-1234-5678" name="tel" required>
+		    <label for="user_tel"><b>전화번호</b></label>
+		    <input type="text" placeholder="예)010-1234-5678" name="user_tel" required>
 		    
 		    <button type="submit" class="registerbtn">회원가입</button>
 		  </div>

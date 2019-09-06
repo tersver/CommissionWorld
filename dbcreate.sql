@@ -40,6 +40,9 @@ CREATE TABLE members(
 	member_num INT NOT NULL AUTO_INCREMENT,
 	member_id VARCHAR(256),
 	member_pw VARCHAR(256),
+	member_name VARCHAR(256),
+	member_birth VARCHAR(256),
+	member_tel VARCHAR(256),
 	PRIMARY KEY(member_num)
 
 );
