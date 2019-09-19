@@ -36,7 +36,22 @@
             }
             return false;
 		}
-		
+		public function login($id,$pw){
+			$query1 = "SELECT distinct member_id,member_pw,member_name from members";
+			$result1= mysql_query($query1);
+            $rows1 = mysql_num_rows($result1);
+            for($i=0;$i<$rows1;$i++){
+            	$db_id = mysql_result($result1, $i, 'member_id');
+				$db_pw = mysql_result($result1, $i, 'member_pw');
+            	if($id==$db_id){
+            		if($pw==$db_pw){
+            			return mysql_result($result1, $i, 'member_name');
+            		}
+            	}
+            }
+            return false;
+          
+		}
 		public function searchAuthor($query){
 			$query1 = "SELECT distinct author_name, profile_pic from picture where author_category='$query'";
 			$result1= mysql_query($query1);
