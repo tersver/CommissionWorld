@@ -21,7 +21,20 @@
     <div class="wrap">
         <header class="header">
             <div class="header__column">
-                <i class="fas fa-user" onclick="document.getElementById('id01').style.display='block'"></i>         
+    			<?php
+					if(!isset($_SESSION['user_name'])){
+				?>
+				<img src="images/signin.jpg" onclick="document.getElementById('id01').style.display='block'" style="width:25px;padding-left:5px"></i>
+				<?php
+					}
+					else{
+					
+				?>
+				<img src="images/login.jpg" onclick="document.getElementById('id01').style.display='block'" style="width:25px;padding-left:5px"></i>
+				<?php
+					}
+				?>
+                
             </div>
             <div class="header__column">
                 <a href="index.html"><img src="images/logo.jpg" alt="" class="logo"></a>
