@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	$username="사용자";
+	if(isset($_SESSION['user_name'])){
+		$username=$_SESSION['user_name'];
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Commission world</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="css/login.css"/>
     <link rel="stylesheet" href="css/common.css">
@@ -14,7 +22,20 @@
     <div class="wrap">
         <header class="header">
             <div class="header__column">
-                <i class="fas fa-user" onclick="document.getElementById('id01').style.display='block'"></i>         
+    			<?php
+					if(!isset($_SESSION['user_name'])){
+				?>
+				<img src="images/signin.jpg" onclick="document.getElementById('id01').style.display='block'" style="width:25px;padding-left:5px"></i>
+				<?php
+					}
+					else{
+					
+				?>
+				<img src="images/login.jpg" onclick="document.getElementById('id01').style.display='block'" style="width:25px;padding-left:5px"></i>
+				<?php
+					}
+				?>
+                
             </div>
             <div class="header__column">
                 <a href="index.html"><img src="images/logo.jpg" alt="" class="logo"></a>
@@ -28,7 +49,7 @@
         <div class="menu_list wrapper3">
         	<div class="info">
         		<i class="fas fa-user"></i>
-        		<span>사용자 님</span>
+        		<span><?=$username?> 님</span>
         	</div>
 			<ul>
 				<li><a href="director_list.html"><p>그림 외주</p></a></li>
@@ -37,6 +58,13 @@
 				<li><a href="director_list.html"><p>글 커미션</p></a></li>
 				<li><a href="#Software"><p>자주 묻는 질문</p></a></li>
 				<li><a href="#Service"><p>문의</p></a></li>
+				<?php
+					if(isset($_SESSION['user_name'])){
+				?>
+				<li><a href="logout.php"><p>로그아웃</p></a></li>
+				<?php
+					}
+				?>
 			</ul>
 		</div>
         <div class="contents">
@@ -100,19 +128,23 @@
         </center>
         -->
     </div>
-    <div id="id01" class="modal">
-	  <form class="modal-content animate" action="/login.php">
+    <?php
+
+    	if(!isset($_SESSION['user_id']) || !isset($_SESSION['user_name'])){	
+    ?>
+		<div id="id01" class="modal">
+	  <form class="modal-content animate" method="post" action="login.php">
 	    <div class="imgcontainer">
 	      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-	      <img src="images/raye.jpg" alt="Avatar" class="avatar">
+	      <img src="images/raye.jpg" alt="Avatar" class="avatar" style="width:200px;">
 	    </div>
 
 	    <div class="container">
 	      <label for="uname"><b>ID</b></label>
-	      <input type="text" placeholder="ID를 입력하세요!" name="uname" required>
+	      <input type="text" placeholder="ID를 입력하세요!" name="user_id" required>
 
 	      <label for="psw"><b>비밀번호</b></label>
-	      <input type="password" placeholder="비밀번호를 입력하세요!" name="psw" required>
+	      <input type="password" placeholder="비밀번호를 입력하세요!" name="user_pw" required>
 	        
 	      <button type="submit">로그인</button>
 	    </div>
@@ -123,6 +155,31 @@
 	    </div>
 	  </form>
 	</div>
+	<?php
+		}
+		else{
+		
+	?>
+	<div id="id01" class="modal">
+	  <form class="modal-content animate" action="login.php">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	      <img src="images/raye.jpg" alt="Avatar" class="avatar">
+	    </div>
+
+	    <div class="container">
+	      <label for="uname"><b>안녕하세요! <?=$_SESSION['user_name']?>님</b></label>
+	      <div>
+		      <button type="button" onclick="location.href='orderlist.html'" class="cancelbtn">주문정보</button>
+		      <button type="button" onclick="location.href='logout.php'" class="cancelbtn">로그아웃</button>
+		  </div>
+	    </div>
+	  </form>
+	</div>
+	
+	<?php	
+		}
+	?>
 	<script type="text/javascript">
 		var h2s = document.getElementsByClassName('menu_icon');
 		var query = "h2s[0].addEventListener('click', function(){changevisible();}, false)";

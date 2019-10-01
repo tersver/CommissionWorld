@@ -5,5 +5,5 @@
 	history.back();</script>";
 
 ?>
-<meta http-equiv='refresh' content='0;url=index.php'>
+<meta http-equiv='refresh' content='0;url=index.html'>
 

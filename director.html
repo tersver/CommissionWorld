@@ -1,0 +1,198 @@
+<?php
+	session_start();
+	$username="사용자";
+	if(isset($_SESSION['user_name'])){
+		$username=$_SESSION['user_name'];
+	}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Commission world</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header__column">
+    			<?php
+					if(!isset($_SESSION['user_name'])){
+				?>
+				<img src="images/signin.jpg" onclick="document.getElementById('id01').style.display='block'" style="width:25px;padding-left:5px"></i>
+				<?php
+					}
+					else{
+					
+				?>
+				<img src="images/login.jpg" onclick="document.getElementById('id01').style.display='block'" style="width:25px;padding-left:5px"></i>
+				<?php
+					}
+				?>
+                
+            </div>
+            <div class="header__column">
+                <a href="index.html"><img src="images/logo.jpg" alt="" class="logo"></a>
+            </div>
+            <div class="header__column">
+				<a class="menu_icon" href="#">
+	                <i class="fas fa-bars"></i>
+	            </a>
+			</div>
+        </header>
+        <div class="menu_list wrapper3">
+        	<div class="info">
+        		<i class="fas fa-user"></i>
+        		<span><?=$username?> 님</span>
+        	</div>
+			<ul>
+				<li><a href="director_list.html"><p>그림 외주</p></a></li>
+				<li><a href="director_list.html"><p>그림 커미션</p></a></li>
+				<li><a href="director_list.html"><p>글 외주</p></a></li>
+				<li><a href="director_list.html"><p>글 커미션</p></a></li>
+				<li><a href="#Software"><p>자주 묻는 질문</p></a></li>
+				<li><a href="#Service"><p>문의</p></a></li>
+				<?php
+					if(isset($_SESSION['user_name'])){
+				?>
+				<li><a href="logout.php"><p>로그아웃</p></a></li>
+				<?php
+					}
+				?>
+			</ul>
+		</div>
+        <div class="contents">
+            <section class="directorinfo">
+                <div>
+                	<div>
+                		<img src="images/raye.jpg"/>
+                	</div>
+					<div class="dirinfo">
+						<p>평균 작업시간:1일</p>
+						<p>raye작가 <span><button type="button" class="btn btn-warning">요청하기</button></span></p>
+					</div>
+                </div>
+            </section>
+            <section class="sample_list">        
+                <ul class="director_list_table">
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                </ul>
+                <ul class="director_list_table">
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                </ul><ul class="director_list_table">
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                </ul>
+            </section>
+            <section class="after">
+                <h2 class="after__title title">후기</h2>
+                <div class="after__contents">
+                	<div>
+	                    <h3 class="after__name">어항/라예작가님</h3>
+	                    <p class="after__desc">
+	                            작업속도도 빠르고 좋았어요!
+	                    </p>
+	                </div>
+	                <div>
+	                    <h3 class="after__name">아항/밍밍작가님</h3>
+	                    <p class="after__desc_last">
+	                            캐릭터가 귀여워요~
+	                    </p>
+	                </div>
+                </div>
+            </section>
+        </div>
+	    <?php
+
+	    	if(!isset($_SESSION['user_id']) || !isset($_SESSION['user_name'])){	
+	    ?>
+			<div id="id01" class="modal">
+		  <form class="modal-content animate" method="post" action="login.php">
+		    <div class="imgcontainer">
+		      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		      <img src="images/raye.jpg" alt="Avatar" class="avatar">
+		    </div>
+
+		    <div class="container">
+		      <label for="uname"><b>ID</b></label>
+		      <input type="text" placeholder="ID를 입력하세요!" name="user_id" required>
+
+		      <label for="psw"><b>비밀번호</b></label>
+		      <input type="password" placeholder="비밀번호를 입력하세요!" name="user_pw" required>
+		        
+		      <button type="submit">로그인</button>
+		    </div>
+
+		    <div class="container" style="background-color:#f1f1f1">
+		      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">취소</button>
+		      <button type="button" onclick="location.href='register.html'" class="cancelbtn">회원가입</button>
+		    </div>
+		  </form>
+		</div>
+		<?php
+			}
+			else{
+			
+		?>
+		<div id="id01" class="modal">
+		  <form class="modal-content animate" action="login.php">
+		    <div class="imgcontainer">
+		      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		      <img src="images/raye.jpg" alt="Avatar" class="avatar">
+		    </div>
+
+		    <div class="container">
+		      <label for="uname"><b>안녕하세요! <?=$_SESSION['user_name']?>님</b></label>
+		      <button type="button" onclick="location.href='orderlist.html'" class="cancelbtn">주문정보</button>
+		      <button type="button" onclick="location.href='logout.php'" class="cancelbtn">로그아웃</button>
+		    </div>
+		  </form>
+		</div>
+		
+		<?php	
+			}
+		?>
+        <footer class="footer">
+            <p>회사 email:<a href="mailto:comi1128@naver.com"><span>comi1128@naver.com</span></a></p>
+            <p>문의 | 결제내역 | 자주묻는질문 | 이용약관</p>
+            <p>대표자:송민성 | 대표전화:010-3766-3475</p>
+            <p>Copyrightⓒ. 2019. Commission World. ALl rights reserved.</p>
+        </footer>
+        <section>
+            <img class="advertisement" src="images/banner.jpg" />
+        </section>
+    </div>
+    <script type="text/javascript">
+		var h2s = document.getElementsByClassName('menu_icon');
+		var query = "h2s[0].addEventListener('click', function(){changevisible();}, false)";
+		eval(query);
+		function changevisible(){
+			var wrappers=document.getElementsByClassName('menu_list');
+			if (wrappers[0].className=="menu_list wrapper2"){
+				wrappers[0].className="menu_list wrapper3";
+			}
+			// 여기 target wrapper3이 원래 1이었음
+			else if(wrappers[0].className=="menu_list wrapper3"){
+				wrappers[0].className="menu_list wrapper2";
+			}
+		}
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/slick.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>
