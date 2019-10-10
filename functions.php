@@ -53,14 +53,30 @@
           
 		}
 		public function searchAuthor($query){
-			$query1 = "SELECT distinct author_name, profile_pic from picture where author_category='$query'";
+			if($query=='casual'){
+				$query='c';	
+			}
+			else if($query=='halfreal'){
+				$query='h';	
+			}
+			else if($query=='real'){
+				$query='r';	
+			}
+			else if($query=='3d'){
+				$query='d';	
+			}
+			else if($query=='animation'){
+				$query='a';	
+			}
+			
+			$query1 = "SELECT distinct author_name, profile_pic from author where author_category='$query'";
 			$result1= mysql_query($query1);
             $rows1 = mysql_num_rows($result1);
             $wholearray = array();
             for($i=0;$i<$rows1;$i++){
             	$author_name = mysql_result($result1, $i, 'author_name');
             	$profile_pic = mysql_result($result1, $i, 'profile_pic');
-            	array_push($wholearray,array($author_name, $picpath));
+            	array_push($wholearray,array($author_name, $profile_pic));
             }
             return $wholearray;
 		}

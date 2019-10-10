@@ -70,54 +70,31 @@
         <div class="contents">
             <section class="category">
                 <ul class="category_list">
-                    <li class="director_category_li" name="casual">
-                    	<a href="director_list.html?query=casual">캐주얼</a>
-                    </li>
-                    <li class="director_category_li" name="halfreal">
-                    	<a href="director_list.html?query=halfreal">반실사</a>
-                    </li>
-                    <li class="director_category_li" name="real">
-                    	<a href="director_list.html?query=real">실사</a>
-                    </li>
-                    <li class="director_category_li" name="3d">
-                    	<a href="director_list.html?query=3d">3D</a>
-                    </li>
-                    <li class="director_category_li" name="animation">
-                    	<a href="director_list.html?query=animation">애니메이션</a>
-                    </li>
+                    <li class="director_category_li">캐주얼</li>
+                    <li class="director_category_li">반실사</li>
+                    <li class="director_category_li">실사</li>
+                    <li class="director_category_li">3D</li>
+                    <li class="director_category_li">애니메이션</li>
                 </ul>
             </section>
-
-            
-            
-            <section class="director_list">
-            <?php
-            	$query=$_GET['query'];
-				$code= str_replace("'", '', $query);
-				include 'functions.php';
-				$functions=new Functions();
-				$arrays=$functions->searchAuthor($query);
-				$i=0;
-				foreach($arrays as $array){
-					$authorname = $array[0];
-					$profile_pic = $array[1];
-					$link="director.html?query='".$authorname."'";
-					if($i%4==0){
-            ?>
+            <section class="director_list">        
                 <ul class="director_list_table">
-            <?php
-            		
-            		}
-            ?>
-                    <li class="director_list_table_li"><a href=<?=$link?>><img src=<?=$profile_pic?> /></a></li>
-            <?php
-            		if($i%4==0){
-            ?>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
                 </ul>
-            <?php
-            		}
-            	}
-            ?>
+                <ul class="director_list_table">
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                </ul><ul class="director_list_table">
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                </ul>
             </section>
         </div>
 	    <?php
@@ -194,21 +171,6 @@
 				wrappers[0].className="menu_list wrapper2";
 			}
 		}
-		var tmp=window.location;
-		tmp=String(tmp).split('?');
-		tmp=tmp[1].split('=')[1];
-		if(tmp=='casual')
-			tmp=0;
-		else if(tmp=='halfreal')
-			tmp=1;
-		else if(tmp=='real')
-			tmp=2;
-		else if(tmp=='3d')
-			tmp=3;
-		else if(tmp=='animation')
-			tmp=4;		
-		var blocks=document.getElementsByClassName('director_category_li');
-		blocks[tmp].className="director_category_li selected";
 	</script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/slick.js"></script>
