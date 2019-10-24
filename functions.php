@@ -81,13 +81,14 @@
             return $wholearray;
 		}
 		public function searchPicture($query){
+			$query= str_replace("'", '', $query);
 			$query1 = "SELECT distinct pic_category, pic_path from picture where author_name='$query'";
 			$result1= mysql_query($query1);
             $rows1 = mysql_num_rows($result1);
             $wholearray = array();
             for($i=0;$i<$rows1;$i++){
             	$pic_path = mysql_result($result1, $i, 'pic_path');
-            	array_push($wholearray,$picpath);
+            	array_push($wholearray,array($pic_path));
             }
             return $wholearray;
 		}

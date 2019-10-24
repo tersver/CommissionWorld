@@ -79,34 +79,24 @@
 					</div>
                 </div>
             </section>
-            <section class="sample_list">
-            <?php
-            	$query=$_GET['query'];
-				$code= str_replace("'", '', $query);
-				include 'functions.php';
-				$functions=new Functions();
-				$arrays=$functions->searchPicture($query);
-				$i=0;
-				foreach($arrays as $array){
-					$pic_path = $array[0];
-					if($i%4==0){
-            ?>
+            <section class="sample_list">        
                 <ul class="director_list_table">
-            <?php
-            		
-            		}
-            ?>
-                    <li class="director_list_table_li"><img src=<?=$pic_path?> /></li>
-            <?php
-            		$i++;
-            		if($i%4==0){
-            ?>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/raye.jpg" /></li>
                 </ul>
-            <?php
-            		}
-            		
-            	}
-            ?>
+                <ul class="director_list_table">
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/dlddld.jpg" /></li>
+                </ul><ul class="director_list_table">
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                    <li class="director_list_table_li"><img src="images/alaal.jpg" /></li>
+                </ul>
             </section>
             <section class="after">
                 <h2 class="after__title title">후기</h2>
